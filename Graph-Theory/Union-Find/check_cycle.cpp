@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//To check whether cycle exists in an undirected graph using union find method
+
 class Edge {
     public:
     int source;
