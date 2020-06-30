@@ -2,6 +2,7 @@
 using namespace std;
 
 // problem : https://leetcode.com/problems/kth-largest-element-in-a-stream/
+// take a min-heap
 
 class KthLargest {
     priority_queue<int,vector<int>,greater<int>>min_heap;
