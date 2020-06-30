@@ -55,7 +55,7 @@ class MaxHeap {
             i = getParent(i);
         }
     }
-    // get maximum value of the heap and pop out
+    // get maximum value of the heap and pop
     int getMaxValue() {
         if(heap_size <= 0){
             return INT_MIN;
