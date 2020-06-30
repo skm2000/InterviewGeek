@@ -40,7 +40,7 @@ class MinHeap {
     int getRightChild(int i) {
         return (2*i)+2;
     }
-    // insert
+    // insert value in a heap
     void insertHeap(int x) {
         if (heap_size == capacity) {
             cout<<"Maximum Capacity Reached"<<"\n";
