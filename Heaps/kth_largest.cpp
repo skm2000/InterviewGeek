@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// using a min-heap
+// using a min-heap (largest-min-heap)
 int findKthLargest(vector<int>& nums, int k,int n) {
     priority_queue<int, vector<int>, greater<int>>min_heap;
     for(int i=0;i<nums.size();i++){
