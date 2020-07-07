@@ -9,7 +9,7 @@ public:
 //      priority queue of vectors
         priority_queue<vector<int>, vector<vector<int>>, compare> pq(points.begin(), points.end());
         vector<vector<int>> ans;
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < K; i++) {
             ans.push_back(pq.top());
             pq.pop();
         }
