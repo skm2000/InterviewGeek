@@ -3,6 +3,7 @@ using namespace std;
 
 //o(v^2) time.Taking adjacency matrix as input
 //Drawback:cound'nt handle negative weights
+//Relaxation Technique = min(d[u]+cost(u,v),dis[v])
 
 int findMinVertex(int* distance,bool* visited,int n){
     int minVertex = -1;
