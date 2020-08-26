@@ -73,6 +73,7 @@ class MinHeap {
     }
     // a recursive method to heapify a subtree
     void MinHeapify(int i) {
+        // get index of left anjd right child respectively
         int l = getLeftChild(i);
         int r = getRightChild(i);
         int smallest = i;

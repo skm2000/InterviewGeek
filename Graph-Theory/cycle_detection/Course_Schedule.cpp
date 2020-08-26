@@ -1,6 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+// similar to detect cycle in a directed graph.Used graph coloring approach(3-color approach).
+// O(V+E) time
+// 0->not visited
+// 2->processing
+// 3->processed
 class Solution {
 private:
     bool isCyclic(vector<vector<int>>&adj,vector<int>&visited,int current){
@@ -17,13 +23,13 @@ private:
         return false;
     }
 public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<vector<int>>adj(numCourses);
+    bool canFinish(int nums, vector<vector<int>>& prerequisites) {
+        vector<vector<int>>adj(nums);
         for(int i=0;i<prerequisites.size();i++){
             adj[prerequisites[i][0]].push_back(prerequisites[i][1]);
         }
-        vector<int>visited(numCourses,0);
-        for(int i=0;i<numCourses;i++){
+        vector<int>visited(nums,0);
+        for(int i=0;i<nums;i++){
             if(visited[i]==0){
                 if(isCyclic(adj,visited,i)){
                     return false;

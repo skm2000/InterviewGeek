@@ -1,10 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
 vector<int>adj[100001];
 int visited[100001];
 
 void dfs(int node){
-    visited[node]=0;
+    visited[node] = 0;
     for(int child:adj[node]){
         if(!visited[child]){
             dfs(child);
@@ -12,25 +13,22 @@ void dfs(int node){
     }
 }
 
+
 int main(){
     int n,e,u,v;
-    cin>>n>>e;
+    cin>>n>>e ;
     for(int i=1;i<=e;i++){
         cin>>u>>v;
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    int cc=0;//count of connected components
+    int cc = 0;
     for(int i=1;i<=n;i++){
         if(!visited[i]){
+            visited[i] = 1;
             dfs(i);
             cc++;
         }
     }
-    if(cc==1 && e==n-1){
-        cout<<"Yes it is a Tree"<<"\n";
-    }
-    else{
-        cout<<"Not a Tree"<<"\n";
-    }
+    cout<<"Connected components"<<"\n";
 }

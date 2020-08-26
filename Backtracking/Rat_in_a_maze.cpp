@@ -23,7 +23,7 @@ void mazeHelper(vector<vector<int>>mat,vector<vector<int>>&solution,int n,int x,
     if(x<0 || x>=n || y<0 || y>=n || mat[x][y]==0 || solution[x][y]==1){
         return;
     }
-    // rat can move in following order up,doen,left,right
+    // rat can move in following order https://leetcode.com/discuss/interview-question/812124/Goldman-Sachs-or-Engineering-Summer-Analyst-or-Offer-2020up,doen,left,right
     solution[x][y] = 1;
     mazeHelper(mat,solution,n,x-1,y);
     mazeHelper(mat,solution,n,x+1,y);
