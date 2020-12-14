@@ -78,18 +78,32 @@ int sum(TreeNode* root){
 
 
 int main(){
-    int n,val,r;
-    string s;
+    int n,r;
     cin>>n>>r;
+    string s;
     vector<pair<string,int>>p;
+    // we have to give this delimiter since getline uses "\n" as delimiter and hence input will not be taken
+    cin.ignore(32767,'\n');
     for(int i=0;i<n-1;i++){
-        cin>>s>>val;
-        p.push_back({s,val});
+        vector<string>v;
+        getline(cin, s); 
+        string word="";
+        for(auto x:s){
+            if(x == ' '){
+                v.push_back(word);
+                word="";
+            }
+            else{
+                word = word + x;
+            }
+        }
+        v.push_back(word);
+        p.push_back({v[0],stoi(v[1])});
     }
     // for(auto x:p){
     //     cout<<x.first<<" "<<x.second<<endl;
     // }
-    // makeTree(p,n,r);
+    // // makeTree(p,n,r);
     TreeNode *root = new TreeNode(r);
     for(int i=0;i<n-1;i++){
         string k = p[i].first;

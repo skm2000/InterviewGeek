@@ -4,28 +4,27 @@ using namespace std;
 
 class Solution {
 private:
-    void dfs(vector<vector<char>>&board,int x,int y){
-        if(x<0 || y<0 || x>=board.size() || y>=board[0].size() || board[x][y]=='X' || board[x][y]=='#') return;
-        board[x][y] = '#';
-        dfs(board,x+1,y);
-        dfs(board,x-1,y);
-        dfs(board,x,y+1);
-        dfs(board,x,y-1);
+    int dfs(vector<vector<char>>&grid,int x,int y){
+        if(x>=0 && y>=0 && x<grid.size() && y<grid[0].size() && grid[x][y]=='1'){
+            grid[x][y] = '0';
+            return 1+dfs(grid,x+1,y)+dfs(grid,x-1,y)+dfs(grid,x,y+1)+dfs(grid,x,y-1);
+        }
+        return 0;
     }
 public:
-    void solve(vector<vector<char>>& board) {
-        for(int i=0;i<board.size();i++){
-            for(int j=0;j<board[0].size();j++){
-                if(board[i][j] == 'O' && (i == 0 || j == 0 || i == board.size()-1 || j == board[0].size()-1)){
-                    dfs(board,i,j);
+    int numIslands(vector<vector<char>>& grid) {
+        if(grid.empty()) return 0;
+        int n=grid.size(),m=grid[0].size(),k,count=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(grid[i][j] == '1'){
+                    k = dfs(grid,i,j);
+                    if(k != 0){
+                        count++;
+                    }
                 }
             }
         }
-        for(int i=0;i<board.size();i++){
-            for(int j=0;j<board[0].size();j++){
-                if(board[i][j] == '#') board[i][j] = 'O';
-                else board[i][j] = 'X';
-            }
-        }
+        return count;
     }
 };

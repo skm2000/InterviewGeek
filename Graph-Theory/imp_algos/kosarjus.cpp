@@ -1,7 +1,7 @@
 /*** Kosarju's Algorithm ---- Count Strongly connected components in the graph ***/
 
 /*  
-    step 1: do dfs taking each node and after finishing pust that node in the stack.
+    step 1: do dfs taking each node and after finishing push that node in the stack.
     step 2: transpose the graph(ie reverse the direction of the edges).
     step 3: again fill the visited array to false for second traveral(ie traversal on reversed graph).
     step 4: traverse each element of the  reversed graph and for each dfs made increse the count of strongly connected components.

@@ -26,15 +26,12 @@ int main(){
 			q.pop();
 			// int wi = x.first;
 			int ei = x.second;
-			if(visited[ei] == 0){
-				visited[ei] = 1;
-				for(int i=0;i<v[ei].size();i++){
-					int e = v[ei][i].first;
-					int r = v[ei][i].second;
-					if(visited[r] == 0 && dis[ei]+e<dis[r]){
-						dis[r] = dis[ei] + e;
-						q.push({dis[r],r});
-					}
+			for(int i=0;i<v[ei].size();i++){
+				int e = v[ei][i].first;
+				int r = v[ei][i].second;
+				if(visited[r] == 0 && dis[ei]+e<dis[r]){
+					dis[r] = dis[ei] + e;
+					q.push({dis[r],r});
 				}
 			}
 		}
