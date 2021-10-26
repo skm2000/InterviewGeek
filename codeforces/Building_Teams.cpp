@@ -11,13 +11,13 @@ vector<bool>vis;
 bool dfs(ll v,ll col){
     vis[v] = true;
     color[v] = col;
-    for(int g:adj[v]){
-        if(!vis[g]){
-            if(!dfs(g,col^1)){
+    for(ll u:adj[v]){
+        if(!vis[u]){
+            if(!dfs(u,col^1)){
                 return false;
             }
         }
-        if(color[g] == color[v]) return false;
+        if(color[u] == color[v]) return false;
     }
     return true;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: eggress_calculator","url":"/home/shubham/Shubham/InterviewGeek/codeforces/eggress_calculator.cpp","tests":[{"id":1628017469710,"input":"1\n52.0.0.0/30\n3\n52.0.0.3\n52.0.0.4\n52.0.0.1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/shubham/Shubham/InterviewGeek/codeforces/eggress_calculator.cpp","group":"local","local":true}

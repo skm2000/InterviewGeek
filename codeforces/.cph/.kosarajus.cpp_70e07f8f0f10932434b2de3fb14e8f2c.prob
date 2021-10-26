@@ -1,0 +1,1 @@
+{"name":"Local: kosarajus","url":"/home/shubham/Shubham/InterviewGeek/codeforces/kosarajus.cpp","tests":[{"id":1628960899649,"input":"5 5 \n0 1 \n1 2 \n2 0 \n1 3 \n3 4 ","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/shubham/Shubham/InterviewGeek/codeforces/kosarajus.cpp","group":"local","local":true}
